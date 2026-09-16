@@ -1,0 +1,366 @@
+/* =========================================================
+   QSD — SIGNATURE GLASS NAVBAR
+========================================================= */
+.navbar {
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  width: min(92%, 1180px);
+  transform: translateX(-50%);
+  z-index: 9999;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.58)
+    );
+ -webkit-backdrop-filter:
+    blur(24px)
+    saturate(170%);
+  backdrop-filter:
+    blur(24px)
+    saturate(170%);
+  box-shadow:
+    0 18px 60px rgba(0, 0, 0, 0.07),
+    0 4px 15px rgba(0, 0, 0, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition:
+    top 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.5s ease,
+    box-shadow 0.5s ease,
+    border-radius 0.5s ease;
+}
+/* =========================================================
+   MOVING LIGHT
+========================================================= */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -30%;
+  width: 35%;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 1),
+      transparent
+    );
+  animation: navLight 7s linear infinite;
+  pointer-events: none;
+}
+@keyframes navLight {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+/* =========================================================
+   SOFT GOLD AMBIENT GLOW
+========================================================= */
+.navbar::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      circle at 50% 120%,
+      rgba(176, 140, 87, 0.741),
+      transparent 45%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+/* =========================================================
+   INNER CONTAINER
+========================================================= */
+.nav-container {
+  position: relative;
+  height: 72px;
+  padding: 0 10px 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+/* =========================================================
+   LOGO
+========================================================= */
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: -2px;
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.logo-main {
+  font-size: 29px;
+  font-weight: 850;
+  color: #151515;
+}
+.logo-dot {
+  margin-left: 1px;
+  font-size: 30px;
+  font-weight: 800;
+  color: #b08d57;
+  transition:
+    transform 0.4s ease;
+}
+.logo:hover {
+  transform: translateY(-2px);
+}
+.logo:hover .logo-dot {
+  transform: translateY(-4px);
+}
+/* =========================================================
+   NAV LINKS CONTAINER
+========================================================= */
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.035);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.22);
+}
+/* ========================================================
+   LINKS
+========================================================= */
+.nav-links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 11px;
+  text-decoration: none;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease;
+}
+/* Hover */
+.nav-links a:hover {
+  color: #171717;
+  background: rgba(255, 255, 255, 0.68);
+  transform: translateY(-1px);
+}
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+.nav-links a.active {
+  color: #171717;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+/* Gold dot */
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #b08d57;
+  transform: translateX(-50%);
+  box-shadow:
+    0 0 0 3px rgba(176, 141, 87, 0.08);
+}
+/* =========================================================
+   CTA
+========================================================= */
+.nav-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  min-width: 125px;
+  height: 44px;
+  padding: 0 14px 0 20px;
+  overflow: hidden;
+  border-radius: 13px;
+  text-decoration: none;
+  color: white;
+  background: #171717;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+/* CTA shine */
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+.nav-btn:hover::before {
+  left: 150%;
+}
+/* CTA arrow */
+.nav-btn i {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 15px;
+  font-style: normal;
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+.nav-btn:hover {
+  background: #b08d57;
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 32px rgba(176, 141, 87, 0.28);
+}
+.nav-btn:hover i {
+  transform: rotate(45deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+/* =========================================================
+   SCROLL STATE
+========================================================= */
+.navbar.navbar-scrolled {
+  top: 10px;
+  width: min(90%, 1120px);
+  border-radius: 17px;
+  background:
+    rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+/* =========================================================
+   FOCUS
+========================================================= */
+.nav-links a:focus-visible,
+.nav-btn:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid #b08d57;
+  outline-offset: 4px;
+}
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 900px) {
+  .navbar {
+    width: 94%;
+  }
+  .nav-container {
+    padding-left: 18px;
+    padding-right: 9px;
+  }
+  .nav-links a {
+    padding: 0 12px;
+  }
+  .nav-btn {
+    min-width: 110px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+@media (max-width: 700px) {
+  .navbar {
+    top: 12px;
+    width: 94%;
+    border-radius: 17px;
+  }
+  .nav-container {
+    height: 62px;
+    padding: 0 9px 0 17px;
+  }
+  .logo-main {
+    font-size: 24px;
+  }
+  .logo-dot {
+    font-size: 25px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-btn {
+    min-width: 105px;
+    height: 38px;
+    padding-left: 15px;
+    border-radius: 11px;
+    font-size: 11px;
+  }
+  .nav-btn i {
+    width: 24px;
+    height: 24px;
+  }
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+@media (max-width: 380px) {
+  .navbar {
+    width: 92%;
+  }
+  .nav-btn {
+    min-width: 96px;
+    padding: 0 11px 0 14px;
+  }
+}
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar::before,
+  .logo,
+  .logo-dot,
+  .nav-links a,
+  .nav-btn,
+  .nav-btn::before,
+  .nav-btn i {
+    animation: none;
+    transition: none;
+  }
+}

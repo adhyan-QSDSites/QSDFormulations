@@ -1,0 +1,349 @@
+/* =========================================
+   QSD ABOUT / US SECTION
+========================================= */
+.about {
+  position: relative;
+  padding: 140px 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+/* =========================================
+   TOP
+========================================= */
+.about-top {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+.about-label {
+  padding-top: 14px;
+}
+.about-label span {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #a27b43;
+}
+.about-label span::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: #a27b43;
+}
+/* =========================================
+   HEADING
+========================================= */
+.about-heading {
+  max-width: 900px;
+}
+.about-heading h2 {
+  margin: 0;
+  font-size: clamp(52px, 7vw, 100px);
+  line-height: 0.92;
+  letter-spacing: -5px;
+  font-weight: 600;
+  color: #171717;
+}
+.about-heading h2 span {
+  display: block;
+  color: #a27b43;
+  font-style: italic;
+  font-weight: 400;
+}
+.about-heading p {
+  max-width: 560px;
+  margin: 35px 0 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6d6d6d;
+}
+/* =========================================
+   MAIN CONTENT
+========================================= */
+.about-main {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 90px;
+  align-items: center;
+}
+/* =========================================
+   VISUAL
+========================================= */
+.about-visual {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(176, 141, 87, 0.16),
+      transparent 40%
+    ),
+    #f4f2ed;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+/* =========================================
+   LARGE QSD CIRCLE
+========================================= */
+.about-orbit {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(162, 123, 67, 0.3);
+  box-shadow:
+    0 0 0 35px rgba(162, 123, 67, 0.035),
+    0 0 0 70px rgba(162, 123, 67, 0.02);
+  animation: aboutFloat 6s ease-in-out infinite;
+}
+.about-orbit::before,
+.about-orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(162, 123, 67, 0.15);
+  pointer-events: none;
+}
+.about-orbit::before {
+  width: 390px;
+  height: 390px;
+}
+.about-orbit::after {
+  width: 500px;
+  height: 500px;
+}
+.about-orbit span {
+  position: relative;
+  z-index: 2;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: -5px;
+  color: #171717;
+}
+/* =========================================
+   VISUAL TEXT
+========================================= */
+.about-visual-text {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #999;
+}
+.about-visual-text span {
+  margin: 0 8px;
+  color: #a27b43;
+}
+/* =========================================
+   CONTENT
+========================================= */
+.about-content {
+  max-width: 540px;
+}
+.about-small-title {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #a27b43;
+}
+.about-content h3 {
+  margin: 0 0 25px;
+  font-size: clamp(35px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -2.5px;
+  font-weight: 500;
+  color: #171717;
+}
+.about-content h3 strong {
+  font-weight: 600;
+}
+.about-content p {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #707070;
+}
+/* =========================================
+   LINK
+========================================= */
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 22px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #171717;
+  border-bottom: 1px solid #171717;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.about-link span {
+  font-size: 18px;
+  transition:
+    transform 0.35s ease;
+}
+.about-link:hover {
+  color: #a27b43;
+  border-color: #a27b43;
+}
+.about-link:hover span {
+  transform: translate(4px, -4px);
+}
+/* =========================================
+   STATS
+========================================= */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 100px;
+  padding-top: 45px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.about-stat {
+  padding: 0 35px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+.about-stat:first-child {
+  padding-left: 0;
+}
+.about-stat:last-child {
+  border-right: none;
+}
+.about-stat strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: -2px;
+  font-weight: 600;
+  color: #171717;
+}
+.about-stat span {
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #858585;
+}
+/* =========================================
+   ANIMATION
+========================================= */
+@keyframes aboutFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 900px) {
+  .about {
+    padding: 110px 0;
+  }
+  .about-top {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 65px;
+  }
+  .about-main {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .about-visual {
+    min-height: 450px;
+  }
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  .about-stat {
+    padding: 0;
+    border-right: none;
+  }
+}
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 600px) {
+  .about {
+    padding: 85px 0;
+  }
+  .about-heading h2 {
+    font-size: 48px;
+    letter-spacing: -3px;
+  }
+  .about-heading p {
+    margin-top: 25px;
+    font-size: 14px;
+  }
+  .about-main {
+    gap: 45px;
+  }
+  .about-visual {
+    min-height: 360px;
+    border-radius: 22px;
+  }
+  .about-orbit {
+    width: 190px;
+    height: 190px;
+  }
+  .about-orbit::before {
+    width: 270px;
+    height: 270px;
+  }
+  .about-orbit::after {
+    width: 350px;
+    height: 350px;
+  }
+  .about-orbit span {
+    font-size: 50px;
+  }
+  .about-visual-text {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+  .about-content h3 {
+    font-size: 36px;
+  }
+  .about-stats {
+    margin-top: 70px;
+    padding-top: 35px;
+  }
+  .about-stat strong {
+    font-size: 34px;
+  }
+}
+/* =========================================
+   REDUCED MOTION
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .about-orbit,
+  .about-link span {
+    animation: none;
+    transition: none;
+  }
+}

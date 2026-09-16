@@ -1,0 +1,78 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.6;
+}
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+ul,
+ol {
+  list-style: none;
+}
+/* ================================
+   GLOBAL CONTAINER
+================================ */
+.container {
+  width: min(90%, 1300px);
+  margin: 0 auto;
+}
+/* ================================
+   GLOBAL SECTION
+================================ */
+section {
+  padding: 90px 0;
+}
+/* ================================
+   GLOBAL TYPOGRAPHY
+================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+p {
+  line-height: 1.7;
+}
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  section {
+    padding: 65px 0;
+  }
+  .container {
+    width: 90%;
+  }
+}
