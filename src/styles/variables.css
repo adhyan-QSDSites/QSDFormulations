@@ -1,0 +1,175 @@
+:root {
+  /* ================================
+     BRAND COLORS
+  ================================= */
+
+  --color-primary: #0b5d3b;
+  --color-primary-dark: #06452c;
+  --color-primary-light: #e8f4ee;
+
+  --color-secondary: #c9a227;
+  --color-secondary-light: #e8d58a;
+  --color-secondary-dark: #9b7812;
+
+  /* ================================
+     NEUTRAL COLORS
+  ================================= */
+
+  --color-white: #ffffff;
+  --color-black: #111111;
+
+  --color-bg: #ffffff;
+  --color-bg-light: #f7f9f7;
+  --color-bg-dark: #0d1712;
+
+  --color-text: #1a1a1a;
+  --color-text-light: #666666;
+  --color-text-muted: #8a8a8a;
+
+  --color-border: #e5e8e5;
+
+  /* ================================
+     TYPOGRAPHY
+  ================================= */
+
+  --font-primary: "Inter", Arial, Helvetica, sans-serif;
+  --font-heading: "Poppins", Arial, Helvetica, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-2xl: 2.75rem;
+  --fs-3xl: 3.5rem;
+  --fs-4xl: 4.5rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.1;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+
+  /* ================================
+     SPACING
+  ================================= */
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* ================================
+     CONTAINER
+  ================================= */
+
+  --container-width: 1320px;
+  --container-padding: 5%;
+
+  /* ================================
+     BORDER RADIUS
+  ================================= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* ================================
+     SHADOWS
+  ================================= */
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 15px 45px rgba(0, 0, 0, 0.12);
+
+  /* ================================
+     TRANSITIONS
+  ================================= */
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+  --transition-slow: 0.6s ease;
+
+  /* ================================
+     Z-INDEX
+  ================================= */
+
+  --z-base: 1;
+  --z-header: 100;
+  --z-dropdown: 500;
+  --z-modal: 1000;
+  --z-loader: 9999;
+
+  /* ================================
+     GRADIENTS
+  ================================= */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+
+  --gradient-gold: linear-gradient(
+    135deg,
+    var(--color-secondary-light),
+    var(--color-secondary)
+  );
+
+  --gradient-light: linear-gradient(
+    135deg,
+    #ffffff,
+    #f3f7f4
+  );
+}
+
+/* ================================
+   GLOBAL RESPONSIVE VARIABLES
+================================ */
+
+@media (max-width: 1200px) {
+  :root {
+    --fs-4xl: 4rem;
+    --fs-3xl: 3rem;
+    --fs-2xl: 2.4rem;
+    --container-padding: 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-4xl: 3rem;
+    --fs-3xl: 2.5rem;
+    --fs-2xl: 2rem;
+    --fs-xl: 1.75rem;
+
+    --space-4xl: 4rem;
+    --space-5xl: 5rem;
+
+    --container-padding: 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --fs-4xl: 2.5rem;
+    --fs-3xl: 2.2rem;
+    --fs-2xl: 1.8rem;
+
+    --container-padding: 5%;
+  }
+}

@@ -1,0 +1,102 @@
+/*==========================
+CATALOG PAGE
+==========================*/
+.catalog {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+/* Header */
+.catalog-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.catalog-heading h1 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+.catalog-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 18px;
+  line-height: 1.8;
+}
+/* Grid */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+/* Card */
+.catalog-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 35px 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+.catalog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+.catalog-card h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 15px;
+}
+.catalog-card p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+/* Button */
+.catalog-card button {
+  background: #b8860b;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.catalog-card button:hover {
+  background: #9b7209;
+}
+/*==========================
+       RESPONSIVE
+==========================*/
+@media (max-width: 992px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog-heading h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .catalog {
+    padding: 60px 0;
+  }
+  .catalog-heading {
+    margin-bottom: 40px;
+  }
+  .catalog-heading h1 {
+    font-size: 2rem;
+  }
+  .catalog-heading p {
+    font-size: 16px;
+  }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-card {
+    padding: 25px;
+  }
+  .catalog-card button {
+    width: 100%;
+  }
+}
