@@ -1,197 +1,729 @@
-/*==========================
-       CONTACT PAGE
-==========================*/
+/* =====================================================
+   QSD FORMULATIONS — CATALOGUE PAGE
+===================================================== */
 
-.contact-page {
-  padding: 80px 0;
-  background: #f8f9fa;
+.catalogue-page {
+  --brown: #2b211c;
+  --brown-light: #59483d;
+  --gold: #b8945b;
+  --gold-light: #d5bd91;
+  --cream: #f5f0e9;
+  --beige: #e8ddd0;
+  --text: #332a25;
+  --muted: #776d66;
+  --white: #ffffff;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--white);
+  color: var(--text);
 }
 
-/* Header */
-
-.contact-header {
-  text-align: center;
-  margin-bottom: 60px;
+.catalogue-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
 }
 
-.contact-header h1 {
-  font-size: 3rem;
-  color: #222;
-  margin-bottom: 20px;
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.catalogue-hero {
+  position: relative;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(35, 26, 21, 0.95) 0%,
+      rgba(35, 26, 21, 0.75) 48%,
+      rgba(35, 26, 21, 0.35) 100%
+    ),
+    url("https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=2000&q=90");
+
+  background-size: cover;
+  background-position: center;
 }
 
-.contact-header p {
-  max-width: 700px;
-  margin: auto;
-  color: #666;
-  font-size: 18px;
-  line-height: 1.8;
+.catalogue-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(184, 148, 91, 0.2),
+      transparent 35%
+    );
 }
 
-/* Wrapper */
+.catalogue-hero-content {
+  position: relative;
+  z-index: 2;
 
-.contact-wrapper {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+.catalogue-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: var(--gold-light);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.catalogue-eyebrow::before {
+  content: "";
+
+  width: 45px;
+  height: 1px;
+
+  background: var(--gold-light);
+}
+
+.catalogue-hero h1 {
+  margin: 25px 0 0;
+
+  color: var(--white);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(60px, 8vw, 105px);
+  font-weight: 400;
+  line-height: 0.92;
+
+  letter-spacing: -4px;
+}
+
+.catalogue-hero h1 span {
+  display: block;
+  color: var(--gold-light);
+}
+
+.catalogue-hero p {
+  max-width: 650px;
+
+  margin: 32px 0 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.catalogue-actions {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.catalogue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  min-width: 190px;
+  padding: 17px 23px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+.catalogue-btn.primary {
+  color: var(--brown);
+  background: var(--gold-light);
+}
+
+.catalogue-btn.secondary {
+  color: var(--white);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.catalogue-btn:hover {
+  transform: translateY(-4px);
+}
+
+.catalogue-btn.primary:hover {
+  background: var(--white);
+}
+
+.catalogue-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.catalogue-intro {
+  padding: 140px 0 100px;
+}
+
+.catalogue-intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.catalogue-label,
+.viewer-heading > div > span,
+.categories-heading > span {
+  display: block;
+
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.catalogue-intro h2 {
+  margin: 25px 0 0;
+
+  color: var(--brown);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(45px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.catalogue-intro h2 span {
+  color: var(--gold);
+}
+
+.catalogue-description {
+  padding-top: 5px;
+}
+
+.catalogue-description > p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.catalogue-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 45px;
+
+  border-top: 1px solid rgba(60, 45, 35, 0.15);
+  border-bottom: 1px solid rgba(60, 45, 35, 0.15);
+}
+
+.catalogue-meta div {
+  padding: 25px 15px;
+
+  border-right: 1px solid rgba(60, 45, 35, 0.15);
+}
+
+.catalogue-meta div:last-child {
+  border-right: none;
+}
+
+.catalogue-meta strong {
+  display: block;
+
+  color: var(--brown);
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.catalogue-meta span {
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   PDF VIEWER
+===================================================== */
+
+.catalogue-viewer-section {
+  padding: 100px 0 140px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7f2eb,
+      #eee4d8
+    );
+}
+
+.viewer-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+}
+
+.viewer-heading h2 {
+  margin: 18px 0 0;
+
+  color: var(--brown);
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.viewer-heading h2 em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.viewer-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 16px 22px;
+
+  color: var(--white);
+  background: var(--brown);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+.viewer-download:hover {
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+.pdf-wrapper {
+  width: 100%;
+
+  padding: 12px;
+
+  background: #d5cbc0;
+
+  box-shadow:
+    0 30px 80px rgba(40, 28, 20, 0.18);
+}
+
+.pdf-viewer {
+  display: block;
+
+  width: 100%;
+  height: 900px;
+
+  border: none;
+
+  background: var(--white);
+}
+
+
+/* =====================================================
+   CATEGORY SECTION
+===================================================== */
+
+.catalogue-categories {
+  padding: 140px 0;
+}
+
+.categories-heading {
   margin-bottom: 70px;
 }
 
-/* Contact Info */
+.categories-heading h2 {
+  margin: 22px 0 0;
 
-.contact-info {
-  background: #fff;
+  color: var(--brown);
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(45px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.categories-heading h2 span {
+  color: var(--gold);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1px;
+
+  background: rgba(70, 50, 38, 0.14);
+
+  border: 1px solid rgba(70, 50, 38, 0.14);
+}
+
+.category-card {
+  position: relative;
+
+  min-height: 310px;
+
   padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  background: var(--white);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
 }
 
-.contact-info h2 {
-  margin-bottom: 25px;
-  color: #222;
+.category-card:hover {
+  background: var(--cream);
+}
+
+.category-card > span {
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 14px;
+}
+
+.category-card h3 {
+  margin: 60px 0 15px;
+
+  color: var(--brown);
+
+  font-family: Georgia, serif;
+
   font-size: 28px;
+  font-weight: 400;
 }
 
-.info-box {
-  margin-bottom: 25px;
+.category-card p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.8;
 }
 
-.info-box h4 {
-  margin-bottom: 8px;
-  color: #b8860b;
-  font-size: 17px;
+.category-card a {
+  position: absolute;
+
+  right: 30px;
+  bottom: 30px;
+
+  color: var(--gold);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: transform 0.3s ease;
 }
 
-.info-box p {
-  color: #555;
-  line-height: 1.7;
+.category-card:hover a {
+  transform: translateX(5px);
 }
 
-/* Contact Form */
 
-.contact-form {
-  background: #fff;
-  padding: 35px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
+/* =====================================================
+   CTA
+===================================================== */
 
-.contact-form h2 {
-  margin-bottom: 25px;
-  color: #222;
-  font-size: 28px;
-}
+.catalogue-cta {
+  min-height: 570px;
 
-.contact-form form {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+  align-items: center;
+  justify-content: center;
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 15px;
-  transition: 0.3s ease;
-  font-family: inherit;
-}
+  margin-bottom: 70px;
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #b8860b;
-  box-shadow: 0 0 8px rgba(184, 134, 11, 0.2);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.contact-form button {
-  background: #b8860b;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #9b7209;
-}
-
-/* Map */
-
-.map-section h2 {
   text-align: center;
-  margin-bottom: 25px;
-  color: #222;
-  font-size: 2rem;
+
+  background:
+    linear-gradient(
+      rgba(38, 28, 22, 0.92),
+      rgba(38, 28, 22, 0.92)
+    ),
+    url("https://images.unsplash.com/photo-1556229010-aa3f7ff66e33?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
 }
 
-.map-section iframe {
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+.catalogue-cta-content {
+  max-width: 720px;
+
+  padding: 50px 25px;
 }
 
-/*==========================
-       RESPONSIVE
-==========================*/
+.catalogue-cta-content > span {
+  color: var(--gold-light);
 
-@media (max-width: 992px) {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
 
-  .contact-wrapper {
+.catalogue-cta h2 {
+  margin: 25px 0;
+
+  color: var(--white);
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(50px, 7vw, 85px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+.catalogue-cta h2 span {
+  color: var(--gold-light);
+}
+
+.catalogue-cta p {
+  max-width: 550px;
+
+  margin: 0 auto 35px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.catalogue-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+
+  padding: 17px 25px;
+
+  color: var(--brown);
+  background: var(--gold-light);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+.catalogue-cta a:hover {
+  background: var(--white);
+  transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .catalogue-intro-grid {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
 
-  .contact-header h1 {
-    font-size: 2.5rem;
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdf-viewer {
+    height: 750px;
   }
 }
 
-@media (max-width: 768px) {
 
-  .contact-page {
-    padding: 60px 0;
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .catalogue-container {
+    width: 90%;
   }
 
-  .contact-header {
-    margin-bottom: 40px;
+  .catalogue-hero {
+    min-height: 650px;
+
+    background-position: 65% center;
   }
 
-  .contact-header h1 {
-    font-size: 2rem;
+  .catalogue-hero h1 {
+    font-size: 58px;
+    letter-spacing: -2px;
   }
 
-  .contact-header p {
-    font-size: 16px;
+  .catalogue-hero p {
+    font-size: 14px;
+    line-height: 1.8;
   }
 
-  .contact-info,
-  .contact-form {
-    padding: 25px;
+  .catalogue-actions {
+    flex-direction: column;
   }
 
-  .contact-info h2,
-  .contact-form h2,
-  .map-section h2 {
-    font-size: 24px;
-  }
-
-  .contact-form button {
+  .catalogue-btn {
     width: 100%;
   }
 
-  .map-section iframe {
-    height: 300px;
+
+  /* INTRO */
+
+  .catalogue-intro {
+    padding: 90px 0 70px;
+  }
+
+  .catalogue-intro h2 {
+    font-size: 48px;
+  }
+
+
+  /* STATS */
+
+  .catalogue-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogue-meta div {
+    border-right: none;
+    border-bottom: 1px solid rgba(60, 45, 35, 0.15);
+  }
+
+  .catalogue-meta div:last-child {
+    border-bottom: none;
+  }
+
+
+  /* VIEWER */
+
+  .catalogue-viewer-section {
+    padding: 80px 0 100px;
+  }
+
+  .viewer-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .viewer-heading h2 {
+    font-size: 45px;
+  }
+
+  .viewer-download {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .pdf-wrapper {
+    padding: 5px;
+  }
+
+  .pdf-viewer {
+    height: 650px;
+  }
+
+
+  /* CATEGORIES */
+
+  .catalogue-categories {
+    padding: 90px 0;
+  }
+
+  .categories-heading h2 {
+    font-size: 48px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    min-height: 280px;
+  }
+
+
+  /* CTA */
+
+  .catalogue-cta {
+    min-height: 520px;
+
+    margin-bottom: 40px;
+  }
+
+  .catalogue-cta h2 {
+    font-size: 52px;
+  }
+
+  .catalogue-cta p {
+    font-size: 13px;
+  }
+
+  .catalogue-cta a {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .catalogue-hero h1 {
+    font-size: 48px;
+  }
+
+  .catalogue-intro h2 {
+    font-size: 42px;
+  }
+
+  .viewer-heading h2 {
+    font-size: 40px;
+  }
+
+  .categories-heading h2 {
+    font-size: 42px;
+  }
+
+  .catalogue-cta h2 {
+    font-size: 45px;
   }
 }
